@@ -1,32 +1,63 @@
-// Toggle the side navigation bar
-function toggleSideNav() {
-  const nav = document.getElementById('sideNav');
-  nav.classList.toggle('open');
-}
-
-// Animate 'The SciArt Studio' word-by-word on the Home page
+// Toggle sidebar
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedTitle = document.getElementById('animated-title');
-  if (!animatedTitle) return;
-
-  const text = animatedTitle.textContent;
-  animatedTitle.textContent = '';
-
-  const words = text.split(' ');
-  words.forEach((word, i) => {
-    const span = document.createElement('span');
-    span.textContent = word + (i < words.length - 1 ? ' ' : '');
-    span.style.opacity = '0';
-    span.style.transition = `opacity 0.5s ease ${i * 0.4}s`;
-    animatedTitle.appendChild(span);
-  });
-
-  // Trigger animation after a short delay
-  setTimeout(() => {
-    Array.from(animatedTitle.children).forEach(span => {
-      span.style.opacity = '1';
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
     });
-  }, 100);
-
-  // Add mousemove effect for the Home page's special elements (if you add them later)
-});
+  
+    // Word-by-word animation
+    const heroText = document.getElementById('hero-text');
+    const words = heroText.innerText.split(' ');
+    heroText.innerHTML = '';
+    words.forEach((word, index) => {
+      const span = document.createElement('span');
+      span.innerText = word + ' ';
+      span.style.opacity = '0';
+      span.style.display = 'inline-block';
+      span.style.animation = `fadeIn 0.5s ease forwards ${index * 0.4}s`;
+      heroText.appendChild(span);
+    });
+  
+    // Create simple hover-responsive particles (placeholder logic)
+    const effects = document.getElementById('background-effects');
+    for (let i = 0; i < 20; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'particle';
+      dot.style.top = `${Math.random() * 100}%`;
+      dot.style.left = `${Math.random() * 100}%`;
+      effects.appendChild(dot);
+    }
+  
+    document.addEventListener('mousemove', e => {
+      document.querySelectorAll('.particle').forEach(dot => {
+        const dx = e.clientX - dot.offsetLeft;
+        const dy = e.clientY - dot.offsetTop;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 150) {
+          dot.style.transform = 'scale(1.5)';
+        } else {
+          dot.style.transform = 'scale(1)';
+        }
+      });
+    });
+  });
+  
+  // CSS for particles (can be added into style.css)
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .particle {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(100, 149, 237, 0.5);
+      transition: transform 0.2s ease;
+    }
+  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);

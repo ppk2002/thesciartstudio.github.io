@@ -1,44 +1,44 @@
+<!-- socials.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The SciArt Studio - Socials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socials</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <button class="menu-btn" onclick="toggleSideNav()">☰</button>
-
-  <nav id="sideNav" class="side-nav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="creations.html" class="nav-link">SciArt Creations</a>
-    <a href="socials.html" class="nav-link active">Socials</a>
+  <nav id="sidebar">
+    <button id="menu-toggle">☰</button>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="creations.html">SciArt Creations</a></li>
+      <li><a href="socials.html" class="active">Socials</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <section class="section socials-section">
-      <h1>Connect with Us</h1>
-      <div class="socials-container">
-        <div class="social-item">
-          <img src="assets/images/instagram.png" alt="Instagram" />
-          <p>@YourInstagram</p>
-        </div>
-        <div class="social-item">
-          <img src="assets/images/twitter.png" alt="Twitter" />
-          <p>@YourTwitter</p>
-        </div>
-        <div class="social-item">
-          <img src="assets/images/linkedin.png" alt="LinkedIn" />
-          <p>Your LinkedIn</p>
-        </div>
-        <div class="social-item">
-          <img src="assets/images/whatsapp.png" alt="WhatsApp Business" />
-          <p>+123 456 7890</p>
-        </div>
+  <main class="socials-page">
+    <h1>Connect with Me</h1>
+    <div class="social-icons">
+      <div class="social-block">
+        <img src="icons/instagram.png" alt="Instagram">
+        <p>@sciartstudio</p>
       </div>
-    </section>
+      <div class="social-block">
+        <img src="icons/twitter.png" alt="Twitter">
+        <p>@sciartstudio</p>
+      </div>
+      <div class="social-block">
+        <img src="icons/linkedin.png" alt="LinkedIn">
+        <p>SciArt Studio</p>
+      </div>
+      <div class="social-block">
+        <img src="icons/whatsapp.png" alt="WhatsApp">
+        <p>+1-234-567-8901</p>
+      </div>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
