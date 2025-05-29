@@ -6,6 +6,14 @@ body {
     overflow-x: hidden;
   }
   
+  .creations-page h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #111;
+  }
+  
   #menu-toggle {
     position: fixed;
     color: black;  
