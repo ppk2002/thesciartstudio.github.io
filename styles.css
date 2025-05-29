@@ -164,3 +164,41 @@ body {
     font-size: 0.95rem;
     opacity: 0.85;
   }
+
+  .socials-page {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .social-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 120px;
+    text-align: center;
+  }
+  
+  .social-block img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-block img:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-block p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
